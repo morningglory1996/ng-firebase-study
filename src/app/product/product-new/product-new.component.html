@@ -1,11 +1,7 @@
 <div class="container">
-  <div class="title">商品編集</div>
+  <div class="title">商品作成</div>
   <form (ngSubmit)="saveProduct()" [formGroup]="productForm">
     <div class="edit-form">
-      <div class="edit-line">
-        <label>Key</label>
-        <span>{{ productForm.controls.key.value }}</span>
-      </div>
       <div class="edit-line">
         <label>名前</label>
         <div>
@@ -15,6 +11,7 @@
             formControlName="name"
             required
             maxlength="50"
+            appForbiddenWord="ぬるぽ"
           />
           <div
             *ngIf="name.invalid && (name.dirty || name.touched)"
@@ -24,9 +21,7 @@
             <div *ngIf="name.errors.maxlength">
               50文字以内で入力してください
             </div>
-            <div *ngIf="name.errors.forbiddenWord">
-              禁止された文字列が含まれます
-            </div>
+            <div *ngIf="name.errors.forbiddenWord">ガッ</div>
           </div>
         </div>
       </div>
@@ -49,15 +44,10 @@
       </div>
     </div>
     <div class="footer">
-      <span
-        class="button white"
-        [routerLink]="['/products', productForm.controls.key.value]"
-        >キャンセル</span
-      >
+      <span class="button white" routerLink="/products">キャンセル</span>
       <button class="button black" [class.disabled]="productForm.invalid">
-        保存
+        作成
       </button>
-      <span class="button red" (click)="deleteProduct()">削除</span>
     </div>
   </form>
 </div>
