@@ -11,14 +11,14 @@ export class FirebaseService {
 
   constructor() {
     const config = {
-      apiKey: 'AIzaSyBOSmH-JkjQs_-9ThxPNnifh3dQtbjf78I',
-      authDomain: 'ng-firebase-study.firebaseapp.com',
-      databaseURL: 'https://ng-firebase-study.firebaseio.com',
-      projectId: 'ng-firebase-study',
-      storageBucket: 'ng-firebase-study.appspot.com',
-      messagingSenderId: '78958917742',
-      appId: '1:78958917742:web:7801f5768496e45152ce7f',
-      measurementId: 'G-LCW0V87MN0',
+      apiKey: '',
+      authDomain: '',
+      databaseURL: '',
+      projectId: '',
+      storageBucket: '',
+      messagingSenderId: '',
+      appId: '',
+      measurementId: '',
     };
     firebase.initializeApp(config);
     this.signInOrcreateUser(this.EMAIL, this.PASSWORD);
