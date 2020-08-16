@@ -1,1 +1,1 @@
-## for learning firebase
+## Firebase学習用
